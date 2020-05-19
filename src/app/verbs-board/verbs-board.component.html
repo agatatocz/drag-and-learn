@@ -1,0 +1,55 @@
+<div class="container" cdkDropListGroup>
+  <div class="columns-container">
+    <div
+      cdkDropList
+      class="column"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="firstForm"
+    >
+      <div class="example-box" *ngFor="let item of firstForm" cdkDrag>
+        <div class="drag-placeholder" *cdkDragPlaceholder></div>
+        {{ item }}
+      </div>
+    </div>
+    <div
+      cdkDropList
+      class="column"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="secondForm"
+    >
+      <div class="example-box" *ngFor="let item of secondForm" cdkDrag>
+        <div class="drag-placeholder" *cdkDragPlaceholder></div>
+        {{ item }}
+      </div>
+    </div>
+    <div
+      cdkDropList
+      class="column"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="thirdForm"
+    >
+      <div class="example-box" *ngFor="let item of thirdForm" cdkDrag>
+        <div class="drag-placeholder" *cdkDragPlaceholder></div>
+        {{ item }}
+      </div>
+    </div>
+    <div
+      cdkDropList
+      class="column"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="translation"
+    >
+      <div class="example-box" *ngFor="let item of translation" cdkDrag>
+        <div class="drag-placeholder" *cdkDragPlaceholder></div>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+
+  <div cdkDropList [cdkDropListData]="currentWord">
+    <div cdkDrag class="new-verb">
+      <div class="drag-placeholder" *cdkDragPlaceholder></div>
+      {{ currentWord[0] }}
+    </div>
+  </div>
+</div>
