@@ -14,11 +14,10 @@ import { shuffle, flatten, isEqual } from "lodash";
 })
 export class VerbsBoardComponent implements OnInit {
   allVerbs: string[] = [];
-  firstForm: string[] = [];
-  secondForm: string[] = [];
-  thirdForm: string[] = [];
-  translation: string[] = [];
-  currentWord: string[] = [];
+  firstForm: string[] = ["", "", ""];
+  secondForm: string[] = ["", "", ""];
+  thirdForm: string[] = ["", "", ""];
+  translation: string[] = ["", "", ""];
   points: boolean[] = [];
 
   constructor() {}
@@ -27,7 +26,6 @@ export class VerbsBoardComponent implements OnInit {
     this.allVerbs = shuffle(
       flatten(germanVerbs.map((verb) => Object.values(verb)))
     );
-    this.currentWord[0] = this.allVerbs.pop();
   }
 
   includes(array: Array<Object>, item: Object) {
@@ -48,21 +46,23 @@ export class VerbsBoardComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
+    const { previousContainer, container } = event;
+    if (previousContainer !== container) {
+      const [fromProperty, fromIndex] = previousContainer.id.split("-");
+      const [toProperty, toIndex] = container.id.split("-");
+
+      if (toProperty !== "allVerbs") {
+        this[toProperty][parseInt(toIndex)] = this[fromProperty][
+          parseInt(fromIndex)
+        ];
+        this[fromProperty][parseInt(fromIndex)] = "";
+        if (fromProperty === "allVerbs") this.allVerbs.shift();
+      } else {
+        this.allVerbs.unshift(this[fromProperty][parseInt(fromIndex)]);
+        this[fromProperty][parseInt(fromIndex)] = "";
+      }
+      if (!this.allVerbs.length) this.validate();
+      console.log(this);
     }
-    if (!this.currentWord.length) this.currentWord[0] = this.allVerbs.pop();
-    if (!this.allVerbs.length && !this.currentWord[0]) this.validate();
   }
 }

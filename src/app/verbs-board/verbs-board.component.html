@@ -1,75 +1,91 @@
 <div class="container" cdkDropListGroup>
   <div class="columns-container">
-    <div
-      cdkDropList
-      class="column"
-      (cdkDropListDropped)="drop($event)"
-      [cdkDropListData]="firstForm"
-    >
+    <div class="column">
       <div
-        class="example-box"
         *ngFor="let item of firstForm; index as i"
-        cdkDrag
-        [ngClass]="{ good: points.length && points[i] === true }"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="firstForm[i]"
+        class="example-box"
+        id="firstForm-{{ i }}"
       >
-        <div class="drag-placeholder" *cdkDragPlaceholder></div>
-        {{ item }}
+        <div
+          class="example-box"
+          cdkDrag
+          [ngClass]="{ good: points.length && points[i] === true }"
+        >
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          {{ item }}
+        </div>
       </div>
     </div>
-    <div
-      cdkDropList
-      class="column"
-      (cdkDropListDropped)="drop($event)"
-      [cdkDropListData]="secondForm"
-    >
+    <div class="column">
       <div
-        class="example-box"
         *ngFor="let item of secondForm; index as i"
-        cdkDrag
-        [ngClass]="{ good: points.length && points[i] === true }"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="secondForm[i]"
+        class="example-box"
+        id="secondForm-{{ i }}"
       >
-        <div class="drag-placeholder" *cdkDragPlaceholder></div>
-        {{ item }}
+        <div
+          class="example-box"
+          cdkDrag
+          [ngClass]="{ good: points.length && points[i] === true }"
+        >
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          {{ item }}
+        </div>
       </div>
     </div>
-    <div
-      cdkDropList
-      class="column"
-      (cdkDropListDropped)="drop($event)"
-      [cdkDropListData]="thirdForm"
-    >
+    <div class="column">
       <div
-        class="example-box"
         *ngFor="let item of thirdForm; index as i"
-        cdkDrag
-        [ngClass]="{ good: points.length && points[i] === true }"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="thirdForm[i]"
+        class="example-box"
+        id="thirdForm-{{ i }}"
       >
-        <div class="drag-placeholder" *cdkDragPlaceholder></div>
-        {{ item }}
+        <div
+          class="example-box"
+          cdkDrag
+          [ngClass]="{ good: points.length && points[i] === true }"
+        >
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          {{ item }}
+        </div>
       </div>
     </div>
-    <div
-      cdkDropList
-      class="column"
-      (cdkDropListDropped)="drop($event)"
-      [cdkDropListData]="translation"
-    >
+    <div class="column">
       <div
-        class="example-box"
         *ngFor="let item of translation; index as i"
-        cdkDrag
-        [ngClass]="{ good: points.length && points[i] === true }"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="translation[i]"
+        class="example-box"
+        id="translation-{{ i }}"
       >
-        <div class="drag-placeholder" *cdkDragPlaceholder></div>
-        {{ item }}
+        <div
+          class="example-box"
+          cdkDrag
+          [ngClass]="{ good: points.length && points[i] === true }"
+        >
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          {{ item }}
+        </div>
       </div>
     </div>
   </div>
-
-  <div cdkDropList [cdkDropListData]="currentWord">
+  <div
+    cdkDropList
+    [cdkDropListData]="allVerbs[0]"
+    (cdkDropListDropped)="drop($event)"
+    id="allVerbs-0"
+  >
     <div cdkDrag class="new-verb">
       <div class="drag-placeholder" *cdkDragPlaceholder></div>
-      {{ currentWord[0] }}
+      {{ allVerbs[0] }}
     </div>
   </div>
 </div>
