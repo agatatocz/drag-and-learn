@@ -2,33 +2,33 @@ import { GermanVerb } from "../interfaces/GermanVerb";
 
 export const germanVerbs: GermanVerb[] = [
   {
-    infinitiv: "backen",
-    imperfekt: "backte/buk",
-    perfekt: "gebacken",
-    ubersetzung: "piec",
+    firstForm: "backen",
+    secondForm: "backte/buk",
+    thirdForm: "gebacken",
+    translation: "piec",
   },
   {
-    infinitiv: "befehlen",
-    imperfekt: "befahl",
-    perfekt: "befohlen",
-    ubersetzung: "rozkazywać",
+    firstForm: "befehlen",
+    secondForm: "befahl",
+    thirdForm: "befohlen",
+    translation: "rozkazywać",
   },
   {
-    infinitiv: "beginnen",
-    imperfekt: "begann",
-    perfekt: "begonnen",
-    ubersetzung: "zaczynać",
-  },
-  {
-    infinitiv: "beißen",
-    imperfekt: "biss",
-    perfekt: "gebissen",
-    ubersetzung: "gryźć",
-  },
-  {
-    infinitiv: "bergen",
-    imperfekt: "barg",
-    perfekt: "geborgen",
-    ubersetzung: "wydobywać, kryć",
+    firstForm: "beginnen",
+    secondForm: "begann",
+    thirdForm: "begonnen",
+    translation: "zaczynać",
   },
 ];
+// {
+//   firstForm: "beißen",
+//   secondForm: "biss",
+//   thirdForm: "gebissen",
+//   translation: "gryźć",
+// },
+// {
+//   firstForm: "bergen",
+//   secondForm: "barg",
+//   thirdForm: "geborgen",
+//   translation: "wydobywać, kryć",
+// },

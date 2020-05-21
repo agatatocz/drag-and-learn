@@ -1,6 +1,6 @@
 export class GermanVerb {
-  infinitiv: string;
-  imperfekt: string;
-  perfekt: string;
-  ubersetzung: string;
+  firstForm: string;
+  secondForm: string;
+  thirdForm: string;
+  translation: string;
 }

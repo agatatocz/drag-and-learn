@@ -6,7 +6,12 @@
       (cdkDropListDropped)="drop($event)"
       [cdkDropListData]="firstForm"
     >
-      <div class="example-box" *ngFor="let item of firstForm" cdkDrag>
+      <div
+        class="example-box"
+        *ngFor="let item of firstForm; index as i"
+        cdkDrag
+        [ngClass]="{ good: points.length && points[i] === true }"
+      >
         <div class="drag-placeholder" *cdkDragPlaceholder></div>
         {{ item }}
       </div>
@@ -17,7 +22,12 @@
       (cdkDropListDropped)="drop($event)"
       [cdkDropListData]="secondForm"
     >
-      <div class="example-box" *ngFor="let item of secondForm" cdkDrag>
+      <div
+        class="example-box"
+        *ngFor="let item of secondForm; index as i"
+        cdkDrag
+        [ngClass]="{ good: points.length && points[i] === true }"
+      >
         <div class="drag-placeholder" *cdkDragPlaceholder></div>
         {{ item }}
       </div>
@@ -28,7 +38,12 @@
       (cdkDropListDropped)="drop($event)"
       [cdkDropListData]="thirdForm"
     >
-      <div class="example-box" *ngFor="let item of thirdForm" cdkDrag>
+      <div
+        class="example-box"
+        *ngFor="let item of thirdForm; index as i"
+        cdkDrag
+        [ngClass]="{ good: points.length && points[i] === true }"
+      >
         <div class="drag-placeholder" *cdkDragPlaceholder></div>
         {{ item }}
       </div>
@@ -39,7 +54,12 @@
       (cdkDropListDropped)="drop($event)"
       [cdkDropListData]="translation"
     >
-      <div class="example-box" *ngFor="let item of translation" cdkDrag>
+      <div
+        class="example-box"
+        *ngFor="let item of translation; index as i"
+        cdkDrag
+        [ngClass]="{ good: points.length && points[i] === true }"
+      >
         <div class="drag-placeholder" *cdkDragPlaceholder></div>
         {{ item }}
       </div>
