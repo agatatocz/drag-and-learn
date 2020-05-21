@@ -19,16 +19,16 @@ export const germanVerbs: GermanVerb[] = [
     thirdForm: "begonnen",
     translation: "zaczynać",
   },
+  {
+    firstForm: "beißen",
+    secondForm: "biss",
+    thirdForm: "gebissen",
+    translation: "gryźć",
+  },
+  {
+    firstForm: "bergen",
+    secondForm: "barg",
+    thirdForm: "geborgen",
+    translation: "wydobywać, kryć",
+  },
 ];
-// {
-//   firstForm: "beißen",
-//   secondForm: "biss",
-//   thirdForm: "gebissen",
-//   translation: "gryźć",
-// },
-// {
-//   firstForm: "bergen",
-//   secondForm: "barg",
-//   thirdForm: "geborgen",
-//   translation: "wydobywać, kryć",
-// },

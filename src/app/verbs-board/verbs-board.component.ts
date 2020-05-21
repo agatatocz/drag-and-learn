@@ -14,10 +14,10 @@ import { shuffle, flatten, isEqual } from "lodash";
 })
 export class VerbsBoardComponent implements OnInit {
   allVerbs: string[] = [];
-  firstForm: string[] = ["", "", ""];
-  secondForm: string[] = ["", "", ""];
-  thirdForm: string[] = ["", "", ""];
-  translation: string[] = ["", "", ""];
+  firstForm: string[] = [];
+  secondForm: string[] = [];
+  thirdForm: string[] = [];
+  translation: string[] = [];
   points: boolean[] = [];
 
   constructor() {}
@@ -26,6 +26,12 @@ export class VerbsBoardComponent implements OnInit {
     this.allVerbs = shuffle(
       flatten(germanVerbs.map((verb) => Object.values(verb)))
     );
+    germanVerbs.forEach(() => {
+      this.firstForm.push("");
+      this.secondForm.push("");
+      this.thirdForm.push("");
+      this.translation.push("");
+    });
   }
 
   includes(array: Array<Object>, item: Object) {
@@ -52,17 +58,18 @@ export class VerbsBoardComponent implements OnInit {
       const [toProperty, toIndex] = container.id.split("-");
 
       if (toProperty !== "allVerbs") {
+        const tmp = this[toProperty][parseInt(toIndex)];
         this[toProperty][parseInt(toIndex)] = this[fromProperty][
           parseInt(fromIndex)
         ];
-        this[fromProperty][parseInt(fromIndex)] = "";
-        if (fromProperty === "allVerbs") this.allVerbs.shift();
+        this[fromProperty][parseInt(fromIndex)] = tmp;
+        if (fromProperty === "allVerbs" && !this.allVerbs[0])
+          this.allVerbs.shift();
       } else {
         this.allVerbs.unshift(this[fromProperty][parseInt(fromIndex)]);
         this[fromProperty][parseInt(fromIndex)] = "";
       }
       if (!this.allVerbs.length) this.validate();
-      console.log(this);
     }
   }
 }

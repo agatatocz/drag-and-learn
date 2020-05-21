@@ -6,7 +6,6 @@
         cdkDropList
         (cdkDropListDropped)="drop($event)"
         [cdkDropListData]="firstForm[i]"
-        class="example-box"
         id="firstForm-{{ i }}"
       >
         <div
@@ -25,7 +24,6 @@
         cdkDropList
         (cdkDropListDropped)="drop($event)"
         [cdkDropListData]="secondForm[i]"
-        class="example-box"
         id="secondForm-{{ i }}"
       >
         <div
@@ -44,7 +42,6 @@
         cdkDropList
         (cdkDropListDropped)="drop($event)"
         [cdkDropListData]="thirdForm[i]"
-        class="example-box"
         id="thirdForm-{{ i }}"
       >
         <div
@@ -63,7 +60,6 @@
         cdkDropList
         (cdkDropListDropped)="drop($event)"
         [cdkDropListData]="translation[i]"
-        class="example-box"
         id="translation-{{ i }}"
       >
         <div
@@ -78,6 +74,7 @@
     </div>
   </div>
   <div
+    *ngIf="allVerbs.length"
     cdkDropList
     [cdkDropListData]="allVerbs[0]"
     (cdkDropListDropped)="drop($event)"
