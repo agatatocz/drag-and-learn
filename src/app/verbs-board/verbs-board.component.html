@@ -79,15 +79,15 @@
     </div>
   </div>
   <div
-    *ngIf="allVerbs.length"
+    *ngIf="flattenVerbs.length"
     cdkDropList
-    [cdkDropListData]="allVerbs[0]"
+    [cdkDropListData]="flattenVerbs[0]"
     (cdkDropListDropped)="drop($event)"
-    id="allVerbs-0"
+    id="flattenVerbs-0"
   >
     <div cdkDrag class="new-verb">
       <div class="drag-placeholder" *cdkDragPlaceholder></div>
-      {{ allVerbs[0] }}
+      {{ flattenVerbs[0] }}
     </div>
   </div>
 </div>

@@ -1,11 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-} from "@angular/cdk/drag-drop";
-import { germanVerbs } from "../../data/germanVerbs";
+import { CdkDragDrop } from "@angular/cdk/drag-drop";
 import { shuffle, flatten, isEqual } from "lodash";
+import { VerbsService } from "../services/verbs.service";
+import { GermanVerb } from "src/interfaces/GermanVerb";
 
 @Component({
   selector: "app-verbs-board",
@@ -13,26 +10,28 @@ import { shuffle, flatten, isEqual } from "lodash";
   styleUrls: ["./verbs-board.component.scss"],
 })
 export class VerbsBoardComponent implements OnInit {
-  allVerbs: string[] = [];
+  verbs: GermanVerb[] = [];
+  flattenVerbs: string[] = [];
   firstForm: string[] = [];
   secondForm: string[] = [];
   thirdForm: string[] = [];
   translation: string[] = [];
   points: boolean[] = [];
 
-  constructor() {}
+  constructor(private verbsService: VerbsService) {}
 
   ngOnInit() {
-    this.allVerbs = shuffle(
+    this.verbs = this.verbsService.getVerbs();
+    this.flattenVerbs = shuffle(
       flatten(
-        germanVerbs.map((verb) => [
+        this.verbs.map((verb) => [
           verb.firstForm,
           verb.secondForm,
           verb.thirdForm,
         ])
       )
     );
-    germanVerbs.forEach((verb) => {
+    this.verbs.forEach((verb) => {
       this.firstForm.push("");
       this.secondForm.push("");
       this.thirdForm.push("");
@@ -45,14 +44,14 @@ export class VerbsBoardComponent implements OnInit {
   }
 
   validate() {
-    for (let i = 0; i < germanVerbs.length; i++) {
+    for (let i = 0; i < this.verbs.length; i++) {
       const row = {
         firstForm: this.firstForm[i],
         secondForm: this.secondForm[i],
         thirdForm: this.thirdForm[i],
         translation: this.translation[i],
       };
-      if (this.includes(germanVerbs, row)) this.points[i] = true;
+      if (this.includes(this.verbs, row)) this.points[i] = true;
       else this.points[i] = false;
     }
   }
@@ -63,19 +62,19 @@ export class VerbsBoardComponent implements OnInit {
       const [fromProperty, fromIndex] = previousContainer.id.split("-");
       const [toProperty, toIndex] = container.id.split("-");
 
-      if (toProperty !== "allVerbs") {
+      if (toProperty !== "flattenVerbs") {
         const tmp = this[toProperty][parseInt(toIndex)];
         this[toProperty][parseInt(toIndex)] = this[fromProperty][
           parseInt(fromIndex)
         ];
         this[fromProperty][parseInt(fromIndex)] = tmp;
-        if (fromProperty === "allVerbs" && !this.allVerbs[0])
-          this.allVerbs.shift();
+        if (fromProperty === "flattenVerbs" && !this.flattenVerbs[0])
+          this.flattenVerbs.shift();
       } else {
-        this.allVerbs.unshift(this[fromProperty][parseInt(fromIndex)]);
+        this.flattenVerbs.unshift(this[fromProperty][parseInt(fromIndex)]);
         this[fromProperty][parseInt(fromIndex)] = "";
       }
-      if (!this.allVerbs.length) this.validate();
+      if (!this.flattenVerbs.length) this.validate();
     }
   }
 }

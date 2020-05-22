@@ -1,0 +1,19 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <span class="text">Wybierz ilość czasowników:</span>
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          [formControl]="valueControl"
+          min="{{ minValue }}"
+          max="{{ maxValue }}"
+        />
+      </mat-form-field>
+    </div>
+    <button matButton mat-raised-button color="primary" type="submit">
+      Zaczynamy!
+    </button>
+  </form>
+</div>
