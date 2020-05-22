@@ -6,6 +6,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -27,6 +28,7 @@ import { VerbsService } from "./services/verbs.service";
     ReactiveFormsModule,
     FormsModule,
     MatButtonModule,
+    MatIconModule,
   ],
   providers: [VerbsService],
   bootstrap: [AppComponent],

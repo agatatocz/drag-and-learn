@@ -22,7 +22,8 @@
 
 .new-verb {
   border: 2px #000 solid;
-  width: 25%;
+  width: fit-content;
+  min-width: 200px;
   height: 3rem;
   text-align: center;
   line-height: 3rem;
@@ -32,6 +33,17 @@
   background: white;
   cursor: move;
   border-radius: 4px;
+  margin: 2px 4px 2px 28px;
+}
+
+.new-verb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-icon {
+  cursor: pointer;
 }
 
 .example-box {

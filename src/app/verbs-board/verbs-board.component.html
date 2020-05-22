@@ -78,16 +78,24 @@
       </div>
     </div>
   </div>
-  <div
-    *ngIf="flattenVerbs.length"
-    cdkDropList
-    [cdkDropListData]="flattenVerbs[0]"
-    (cdkDropListDropped)="drop($event)"
-    id="flattenVerbs-0"
-  >
-    <div cdkDrag class="new-verb">
-      <div class="drag-placeholder" *cdkDragPlaceholder></div>
-      {{ flattenVerbs[0] }}
+
+  <div class="new-verb-container" *ngIf="flattenVerbs.length">
+    <div
+      cdkDropList
+      [cdkDropListData]="flattenVerbs[0]"
+      (cdkDropListDropped)="drop($event)"
+      id="flattenVerbs-0"
+    >
+      <div cdkDrag class="new-verb">
+        <div class="drag-placeholder" *cdkDragPlaceholder></div>
+        {{ flattenVerbs[0] }}
+      </div>
     </div>
+    <mat-icon
+      aria-hidden="false"
+      class="change-icon"
+      (click)="changeCurrnetVerb()"
+      >cached</mat-icon
+    >
   </div>
 </div>

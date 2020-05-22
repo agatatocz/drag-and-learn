@@ -77,4 +77,9 @@ export class VerbsBoardComponent implements OnInit {
       if (!this.flattenVerbs.length) this.validate();
     }
   }
+
+  changeCurrnetVerb() {
+    const verb = this.flattenVerbs.shift();
+    this.flattenVerbs.push(verb);
+  }
 }
