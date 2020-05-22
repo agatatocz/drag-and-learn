@@ -26,7 +26,6 @@ export class StartScreenComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.valueControl.value, this.maxValue);
     this.verbsService.setNumberOfVerbs(this.valueControl.value);
     this.router.navigateByUrl("/verbs");
   }
