@@ -1,6 +1,7 @@
 <div class="container" cdkDropListGroup>
   <div class="columns-container">
     <div class="column">
+      <h3 class="header">Infinitiv</h3>
       <div
         *ngFor="let item of firstForm; index as i"
         cdkDropList
@@ -18,7 +19,9 @@
         </div>
       </div>
     </div>
+
     <div class="column">
+      <h3 class="header">Imperfekt</h3>
       <div
         *ngFor="let item of secondForm; index as i"
         cdkDropList
@@ -37,6 +40,7 @@
       </div>
     </div>
     <div class="column">
+      <h3 class="header">Perfekt</h3>
       <div
         *ngFor="let item of thirdForm; index as i"
         cdkDropList
@@ -55,6 +59,7 @@
       </div>
     </div>
     <div class="column">
+      <h3 class="header">Übersetzung</h3>
       <div
         *ngFor="let item of translation; index as i"
         cdkDropList

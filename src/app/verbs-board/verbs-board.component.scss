@@ -14,6 +14,11 @@
   overflow: hidden;
   margin: 4px 1px;
 }
+.header {
+  border-bottom: solid 1px #ccc;
+  margin: 0;
+  padding: 3px;
+}
 
 .new-verb {
   border: 2px #000 solid;
@@ -25,6 +30,8 @@
   margin-right: auto;
   margin-left: auto;
   background: white;
+  cursor: move;
+  border-radius: 4px;
 }
 
 .example-box {
@@ -55,4 +62,6 @@
 
 .good {
   background-color: #add9bd;
+  border-top: 1px green solid;
+  border-bottom: 1px green solid;
 }

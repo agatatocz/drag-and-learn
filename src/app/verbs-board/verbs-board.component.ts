@@ -24,13 +24,19 @@ export class VerbsBoardComponent implements OnInit {
 
   ngOnInit() {
     this.allVerbs = shuffle(
-      flatten(germanVerbs.map((verb) => Object.values(verb)))
+      flatten(
+        germanVerbs.map((verb) => [
+          verb.firstForm,
+          verb.secondForm,
+          verb.thirdForm,
+        ])
+      )
     );
-    germanVerbs.forEach(() => {
+    germanVerbs.forEach((verb) => {
       this.firstForm.push("");
       this.secondForm.push("");
       this.thirdForm.push("");
-      this.translation.push("");
+      this.translation.push(verb.translation);
     });
   }
 
