@@ -154,7 +154,7 @@ export const germanVerbs: GermanVerb[] = [
   {
     firstForm: "frieren",
     secondForm: "fror",
-    thirdForm: "hat",
+    thirdForm: "gefroren",
     translation: "marznąć",
   },
   {
@@ -177,15 +177,15 @@ export const germanVerbs: GermanVerb[] = [
   },
   {
     firstForm: "genießen",
-    secondForm: "się",
-    thirdForm: "genoss",
-    translation: "rozkoszywać",
+    secondForm: "genoss",
+    thirdForm: "genossen",
+    translation: "rozkoszywać się",
   },
   {
     firstForm: "geschehen",
-    secondForm: "się",
-    thirdForm: "geschah",
-    translation: "wydarzać",
+    secondForm: "geschah",
+    thirdForm: "geschehen",
+    translation: "wydarzać się",
   },
   {
     firstForm: "gewinnen",
@@ -225,9 +225,9 @@ export const germanVerbs: GermanVerb[] = [
   },
   {
     firstForm: "heißen",
-    secondForm: "się",
-    thirdForm: "hieß",
-    translation: "nazywać",
+    secondForm: "hieß",
+    thirdForm: "geheißen",
+    translation: "nazywać się",
   },
   {
     firstForm: "helfen",
@@ -357,9 +357,9 @@ export const germanVerbs: GermanVerb[] = [
   },
   {
     firstForm: "reiten",
-    secondForm: "konno",
-    thirdForm: "ritt",
-    translation: "jeździć",
+    secondForm: "ritt",
+    thirdForm: "geritten",
+    translation: "jeździć konno",
   },
   {
     firstForm: "rennen",
@@ -484,7 +484,7 @@ export const germanVerbs: GermanVerb[] = [
   {
     firstForm: "sehen",
     secondForm: "sah",
-    thirdForm: "hat gesehen",
+    thirdForm: "gesehen",
     translation: "widzieć",
   },
   {
@@ -519,9 +519,9 @@ export const germanVerbs: GermanVerb[] = [
   },
   {
     firstForm: "sollen",
-    secondForm: "powinność",
-    thirdForm: "sollte",
-    translation: "mieć",
+    secondForm: "sollte",
+    thirdForm: "gesollt",
+    translation: "mieć powinność",
   },
   {
     firstForm: "sprechen",
