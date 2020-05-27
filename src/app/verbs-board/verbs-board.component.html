@@ -75,6 +75,12 @@
         >
           <div class="drag-placeholder" *cdkDragPlaceholder></div>
           {{ item }}
+          <mat-icon
+            aria-hidden="false"
+            class="check-icon"
+            [ngClass]="{ hidden: !points.length || !points[i] === true }"
+            >check</mat-icon
+          >
         </div>
       </div>
     </div>

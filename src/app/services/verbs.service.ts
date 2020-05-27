@@ -7,8 +7,8 @@ import { shuffle, take } from "lodash";
   providedIn: "root",
 })
 export class VerbsService {
-  numberOfVerbs: number = 2;
-  minValue: number = 2;
+  numberOfVerbs: number = 1;
+  minValue: number = 1;
   maxValue: number = germanVerbs.length;
 
   constructor() {}
