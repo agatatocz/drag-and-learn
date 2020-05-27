@@ -15,9 +15,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { StartScreenComponent } from "./start-screen/start-screen.component";
 
 import { VerbsService } from "./services/verbs.service";
+import { BackButtonComponent } from './back-button/back-button.component';
 
 @NgModule({
-  declarations: [AppComponent, VerbsBoardComponent, StartScreenComponent],
+  declarations: [AppComponent, VerbsBoardComponent, StartScreenComponent, BackButtonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
