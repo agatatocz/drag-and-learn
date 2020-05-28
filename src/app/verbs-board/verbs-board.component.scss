@@ -94,3 +94,15 @@
 .hidden {
   display: none;
 }
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
+
+  button {
+    margin: 4px 0;
+  }
+}

@@ -21,7 +21,16 @@ export class VerbsBoardComponent implements OnInit {
   constructor(private verbsService: VerbsService) {}
 
   ngOnInit() {
-    this.verbs = this.verbsService.getVerbs();
+    this.handleNewSet();
+  }
+
+  setTables() {
+    this.firstForm = [];
+    this.secondForm = [];
+    this.thirdForm = [];
+    this.translation = [];
+    this.points = [];
+
     this.flattenVerbs = shuffle(
       flatten(
         this.verbs.map((verb) => [
@@ -78,8 +87,17 @@ export class VerbsBoardComponent implements OnInit {
     }
   }
 
-  changeCurrnetVerb() {
+  handleCurrnetVerbChange() {
     const verb = this.flattenVerbs.shift();
     this.flattenVerbs.push(verb);
+  }
+
+  handleReset() {
+    this.setTables();
+  }
+
+  handleNewSet() {
+    this.verbs = this.verbsService.getVerbs();
+    this.setTables();
   }
 }

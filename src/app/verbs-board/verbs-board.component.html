@@ -101,8 +101,17 @@
     <mat-icon
       aria-hidden="false"
       class="change-icon"
-      (click)="changeCurrnetVerb()"
+      (click)="handleCurrnetVerbChange()"
       >cached</mat-icon
     >
+  </div>
+
+  <div class="buttons-container" *ngIf="!flattenVerbs.length">
+    <button matButton mat-raised-button color="primary" (click)="handleReset()">
+      Jeszcze raz
+    </button>
+    <button matButton mat-raised-button color="accent" (click)="handleNewSet()">
+      Losuj nowy zestaw
+    </button>
   </div>
 </div>
