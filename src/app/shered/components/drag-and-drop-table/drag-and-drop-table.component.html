@@ -48,17 +48,13 @@
     >
   </div>
 
-  <div class="buttons-container" *ngIf="!flattenDragData.length">
-    <button matButton mat-raised-button color="primary" (click)="setTables()">
-      Jeszcze raz
-    </button>
-    <!-- <button
-        matButton
-        mat-raised-button
-        color="accent"
-        (click)="handleNewSet()"
-      >
-        Losuj nowy zestaw
-      </button> -->
-  </div>
+  <button
+    matButton
+    mat-raised-button
+    color="primary"
+    (click)="setTables()"
+    *ngIf="!flattenDragData.length"
+  >
+    Jeszcze raz
+  </button>
 </div>

@@ -23,9 +23,5 @@ export class IrregularVerbsPageComponent implements OnInit {
 
   handleNewSet() {
     this.verbs = this.verbsService.getVerbs();
-    console.log(
-      "IrregularVerbsPageComponent -> handleNewSet -> this.verbs",
-      this.verbs
-    );
   }
 }

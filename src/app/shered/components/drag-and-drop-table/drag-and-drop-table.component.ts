@@ -19,6 +19,9 @@ export class DragAndDropTableComponent implements OnInit {
   ngOnInit() {
     this.setTables();
   }
+  ngOnChanges() {
+    this.setTables();
+  }
 
   setTables() {
     this.columns.forEach((column) => {

@@ -1,11 +1,10 @@
-<app-back-button></app-back-button>
-<app-drag-and-drop-table
-  [data]="verbs"
-  [columns]="columns"
-></app-drag-and-drop-table>
-
-<div class="buttons-container">
+<div class="header">
+  <app-back-button></app-back-button>
   <button matButton mat-raised-button color="accent" (click)="handleNewSet()">
     Losuj nowy zestaw
   </button>
 </div>
+<app-drag-and-drop-table
+  [data]="verbs"
+  [columns]="columns"
+></app-drag-and-drop-table>
