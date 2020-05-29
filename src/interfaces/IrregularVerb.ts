@@ -1,4 +1,4 @@
-export class GermanVerb {
+export class IrregularVerb {
   firstForm: string;
   secondForm: string;
   thirdForm: string;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerbsBoardComponent } from './verbs-board.component';
+import { IrregularVerbsPageComponent } from './irregular-verbs-page.component';
 
-describe('VerbsBoardComponent', () => {
-  let component: VerbsBoardComponent;
-  let fixture: ComponentFixture<VerbsBoardComponent>;
+describe('IrregularVerbsPageComponent', () => {
+  let component: IrregularVerbsPageComponent;
+  let fixture: ComponentFixture<IrregularVerbsPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerbsBoardComponent ]
+      declarations: [ IrregularVerbsPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VerbsBoardComponent);
+    fixture = TestBed.createComponent(IrregularVerbsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

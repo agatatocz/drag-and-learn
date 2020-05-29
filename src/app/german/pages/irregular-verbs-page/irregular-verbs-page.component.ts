@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { CdkDragDrop } from "@angular/cdk/drag-drop";
 import { shuffle, flatten, isEqual } from "lodash";
-import { VerbsService } from "../services/verbs.service";
-import { GermanVerb } from "src/interfaces/GermanVerb";
+import { VerbsService } from "../../../german/services/verbs.service";
+import { IrregularVerb } from "src/interfaces/IrregularVerb";
 
 @Component({
-  selector: "app-verbs-board",
-  templateUrl: "./verbs-board.component.html",
-  styleUrls: ["./verbs-board.component.scss"],
+  selector: "app-irregular-verbs-page",
+  templateUrl: "./irregular-verbs-page.component.html",
+  styleUrls: ["./irregular-verbs-page.component.scss"],
 })
-export class VerbsBoardComponent implements OnInit {
-  verbs: GermanVerb[] = [];
+export class IrregularVerbsPageComponent implements OnInit {
+  verbs: IrregularVerb[] = [];
   flattenVerbs: string[] = [];
   firstForm: string[] = [];
   secondForm: string[] = [];

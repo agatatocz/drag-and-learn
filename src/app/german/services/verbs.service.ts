@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { germanVerbs } from "../../data/germanVerbs";
-import { GermanVerb } from "src/interfaces/GermanVerb";
+import { data as germanVerbs } from "../../../data/german/irregularVerbs";
+import { IrregularVerb } from "src/interfaces/IrregularVerb";
 import { shuffle, take } from "lodash";
 
 @Injectable({
@@ -17,7 +17,7 @@ export class VerbsService {
     this.numberOfVerbs = numberOfVerbs;
   }
 
-  getVerbs(): Array<GermanVerb> {
+  getVerbs(): Array<IrregularVerb> {
     return take(shuffle(germanVerbs), this.numberOfVerbs);
   }
 }
