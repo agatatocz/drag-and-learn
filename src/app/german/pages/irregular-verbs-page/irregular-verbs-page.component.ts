@@ -1,6 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { CdkDragDrop } from "@angular/cdk/drag-drop";
-import { shuffle, flatten, isEqual } from "lodash";
 import { VerbsService } from "../../../german/services/verbs.service";
 import { IrregularVerb } from "src/interfaces/IrregularVerb";
 import { Column } from "src/interfaces/Column";

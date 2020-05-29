@@ -1,5 +1,5 @@
-import { Column } from "../../interfaces/Column";
-import { Article } from "../../interfaces/german/Article";
+import { Column } from "src/interfaces/Column";
+import { Article } from "src/interfaces/german/Article";
 
 export const columns: Column[] = [
   {
@@ -31,28 +31,28 @@ export const columns: Column[] = [
 
 export const data: Article[] = [
   {
-    case: `Nominativ\nwer? was?`,
+    case: `Nominativ (wer? was?)`,
     masculin: "der",
     feminin: "die",
     neuter: "das",
     plural: "die",
   },
   {
-    case: `Genitiv\nwessen?`,
+    case: `Genitiv (wessen?)`,
     masculin: "des -s",
     feminin: "der",
     neuter: "des -s",
     plural: "der",
   },
   {
-    case: `Dativ\nwem?`,
+    case: `Dativ (wem?)`,
     masculin: "dem",
     feminin: "der",
     neuter: "dem",
     plural: "den -n",
   },
   {
-    case: `Akkusativ\nwen? was?`,
+    case: `Akkusativ (wen? was?)`,
     masculin: "den",
     feminin: "die",
     neuter: "das",

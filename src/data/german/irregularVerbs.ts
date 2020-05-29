@@ -1,5 +1,5 @@
-import { IrregularVerb } from "../../interfaces/IrregularVerb";
-import { Column } from "../../interfaces/Column";
+import { IrregularVerb } from "src/interfaces/IrregularVerb";
+import { Column } from "src/interfaces/Column";
 
 export const columns: Column[] = [
   {

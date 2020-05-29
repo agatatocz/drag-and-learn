@@ -2,8 +2,15 @@
   <app-card
     title="Czasowniki nieregularne"
     text="Wybierz ilość czasowników:"
-    [minValue]="minValue"
-    [maxValue]="maxValue"
-    (onSubmit)="onSubmit($event)"
+    [minValue]="minVerbs"
+    [maxValue]="maxVerbs"
+    (onSubmit)="onVerbsSubmit($event)"
+  ></app-card>
+  <app-card
+    title="Odmiana rodzajników określonych"
+    text="Wybierz ilość przypadków:"
+    [minValue]="minArticles"
+    [maxValue]="maxArticles"
+    (onSubmit)="onArticlesSubmit($event)"
   ></app-card>
 </div>

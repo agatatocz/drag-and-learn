@@ -10,9 +10,14 @@ import { VerbsService } from "./services/verbs.service";
 
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { IrregularVerbsPageComponent } from "./pages/irregular-verbs-page/irregular-verbs-page.component";
+import { ArticlesPageComponent } from "./pages/articles-page/articles-page.component";
 
 @NgModule({
-  declarations: [HomePageComponent, IrregularVerbsPageComponent],
+  declarations: [
+    HomePageComponent,
+    IrregularVerbsPageComponent,
+    ArticlesPageComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -21,6 +26,10 @@ import { IrregularVerbsPageComponent } from "./pages/irregular-verbs-page/irregu
     SheredModule,
   ],
   providers: [VerbsService],
-  exports: [HomePageComponent, IrregularVerbsPageComponent],
+  exports: [
+    HomePageComponent,
+    IrregularVerbsPageComponent,
+    ArticlesPageComponent,
+  ],
 })
 export class GermanModule {}
