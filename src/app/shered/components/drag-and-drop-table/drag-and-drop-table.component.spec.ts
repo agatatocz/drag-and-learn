@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerbsBoardComponent } from './verbs-board.component';
+import { DragAndDropTableComponent } from './drag-and-drop-table.component';
 
-describe('VerbsBoardComponent', () => {
-  let component: VerbsBoardComponent;
-  let fixture: ComponentFixture<VerbsBoardComponent>;
+describe('DragAndDropTableComponent', () => {
+  let component: DragAndDropTableComponent;
+  let fixture: ComponentFixture<DragAndDropTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerbsBoardComponent ]
+      declarations: [ DragAndDropTableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VerbsBoardComponent);
+    fixture = TestBed.createComponent(DragAndDropTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

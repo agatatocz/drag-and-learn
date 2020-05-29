@@ -1,6 +1,30 @@
-import { GermanVerb } from "../interfaces/GermanVerb";
+import { IrregularVerb } from "src/interfaces/IrregularVerb";
+import { Column } from "src/interfaces/Column";
 
-export const germanVerbs: GermanVerb[] = [
+export const columns: Column[] = [
+  {
+    label: "Infinitiv",
+    name: "firstForm",
+    show: false,
+  },
+  {
+    label: "Imperfekt",
+    name: "secondForm",
+    show: false,
+  },
+  {
+    label: "Perfekt",
+    name: "thirdForm",
+    show: false,
+  },
+  {
+    label: "Übersetzung",
+    name: "translation",
+    show: true,
+  },
+];
+
+export const data: IrregularVerb[] = [
   {
     firstForm: "backen",
     secondForm: "backte",

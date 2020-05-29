@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
-import { germanVerbs } from "../../data/germanVerbs";
-import { GermanVerb } from "src/interfaces/GermanVerb";
 import { shuffle, take } from "lodash";
+
+import { data, columns } from "../../../data/german/irregularVerbs";
+import { IrregularVerb } from "src/interfaces/IrregularVerb";
 
 @Injectable({
   providedIn: "root",
@@ -9,7 +10,8 @@ import { shuffle, take } from "lodash";
 export class VerbsService {
   numberOfVerbs: number = 1;
   minValue: number = 1;
-  maxValue: number = germanVerbs.length;
+  maxValue: number = data.length;
+  columns = columns;
 
   constructor() {}
 
@@ -17,7 +19,7 @@ export class VerbsService {
     this.numberOfVerbs = numberOfVerbs;
   }
 
-  getVerbs(): Array<GermanVerb> {
-    return take(shuffle(germanVerbs), this.numberOfVerbs);
+  getVerbs(): Array<IrregularVerb> {
+    return take(shuffle(data), this.numberOfVerbs);
   }
 }
